@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="启动服务1"
+        android:textColor="@color/black"
+        android:id="@+id/startService1Btn"></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止服务1"
+        android:textColor="@color/black"
+        android:id="@+id/stopService1Btn"></Button>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动服务2"
+        android:textColor="@color/black"
+        android:id="@+id/startService2Btn"></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止服务2"
+        android:textColor="@color/black"
+        android:id="@+id/stopService2Btn"></Button>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="静态注册开始广播"
+        android:textColor="@color/black"
+        android:id="@+id/startBroadcastBtn"></Button>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="动态注册发送广播"
+        android:textColor="@color/black"
+        android:id="@+id/startBroadcastDynamicBtn"></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送有序广播"
+        android:textColor="@color/black"
+        android:id="@+id/sendSortBtn"></Button>
+
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content Provider"
+        android:textColor="@color/black"
+        android:id="@+id/contentProviderBtn"></Button>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启线程Thread"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/startThreadBtn"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="开启线程Runnable"
+            android:textColor="@color/black"
+            android:id="@+id/startRunnableBtn"></Button>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Handler1"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:id="@+id/handlerBtn"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Handler2"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/handler2Btn"></Button>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Looper"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/looperBtn"></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JNI"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/jniBtn"></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MVP"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/mvpBtn"></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MVVM"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/mvvmBtn"></Button>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retrofit"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/retrofitBtn"></Button>
+
+    </LinearLayout>
+
+</LinearLayout>

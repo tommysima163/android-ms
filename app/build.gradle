@@ -1,0 +1,65 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+
+android {
+    namespace 'com.tommy.androidms'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.tommy.androidms"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+
+        viewBinding = true
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+
+dependencies {
+    //test
+
+
+    // Room
+    implementation ("androidx.room:room-runtime:2.2.6")
+    implementation ("androidx.room:room-ktx:2.2.6")
+    testImplementation ("androidx.room:room-testing:2.2.6")
+
+    //自适应
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation "com.github.permissions-dispatcher:permissionsdispatcher:4.8.0"
+    annotationProcessor "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.8.0"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation libs.retrofit
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
