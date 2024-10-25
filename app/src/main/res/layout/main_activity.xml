@@ -150,6 +150,14 @@
             android:textColor="@color/black"
             android:id="@+id/retrofitBtn"></Button>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="协程"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:id="@+id/coroutineBtn"></Button>
+
     </LinearLayout>
 
 </LinearLayout>

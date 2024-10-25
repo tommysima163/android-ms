@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    id 'org.jetbrains.kotlin.android'
 }
 
 
 android {
     namespace 'com.tommy.androidms'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.tommy.androidms"
@@ -38,6 +39,9 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 
@@ -48,6 +52,7 @@ dependencies {
     // Room
     implementation ("androidx.room:room-runtime:2.2.6")
     implementation ("androidx.room:room-ktx:2.2.6")
+    implementation 'androidx.core:core-ktx:+'
     testImplementation ("androidx.room:room-testing:2.2.6")
 
     //自适应

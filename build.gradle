@@ -2,7 +2,7 @@
 buildscript {
     ext.kotlin_version = '1.6.21'
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
     }
 }
 
@@ -15,8 +15,8 @@ alias(libs.plugins.androidApplication) apply false
 
 ext {
     //编译版本不能大于30 否则要Java8以上才能支持，导致jitpack打包失败
-    compileSdkVersion = 33
-    targetSdkVersion = 33
+    compileSdkVersion = 35
+    targetSdkVersion = 35
     minSdkVersion = 26
 
     mvm_version = 'latest.release'

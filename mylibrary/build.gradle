@@ -2,6 +2,7 @@ plugins {
     //alias(libs.plugins.androidLibrary)
     id 'com.android.library'
     id 'maven-publish'
+    id 'org.jetbrains.kotlin.android'
 
 }
 
@@ -44,12 +45,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 }
 
 dependencies {
 
     implementation libs.appcompat
     implementation libs.material
+    implementation 'androidx.core:core-ktx:+'
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

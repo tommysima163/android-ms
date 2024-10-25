@@ -27,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.JsonParser;
 import com.tommy.androidms.broadcast.MyReceiver;
 import com.tommy.androidms.broadcast.MyReceiver2;
+import com.tommy.androidms.coroutines.CoroutineTest;
 import com.tommy.androidms.databinding.MainActivityBinding;
 import com.tommy.androidms.multithreading.MyRunnable;
 import com.tommy.androidms.multithreading.MyThread;
@@ -300,6 +301,18 @@ public class MainActivity extends AppCompatActivity implements CustomAdapt {
                     }
                 });
 
+            }
+        });
+
+        binding.coroutineBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e(TAG,"coroutineBtn---");
+                CoroutineTest coroutineTest = new CoroutineTest();
+//                coroutineTest.doSomething()
+                coroutineTest.test();
+                coroutineTest.testSerialTask();
+                coroutineTest.testSerialTask2();
             }
         });
 
