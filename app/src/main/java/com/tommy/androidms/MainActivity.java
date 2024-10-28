@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.google.gson.JsonParser;
 import com.tommy.androidms.broadcast.MyReceiver;
@@ -310,13 +311,20 @@ public class MainActivity extends AppCompatActivity implements CustomAdapt {
                 Log.e(TAG,"coroutineBtn---");
                 CoroutineTest coroutineTest = new CoroutineTest();
 //                coroutineTest.doSomething()
-                coroutineTest.test();
-                coroutineTest.testSerialTask();
-                coroutineTest.testSerialTask2();
+//                coroutineTest.test();
+//                coroutineTest.testSerialTask();
+//                coroutineTest.testSerialTask2();
+
+                //使用 async 并行执行任务
+               // coroutineTest.testAsync(MainActivity.this);
+// 使用 runBlocking 函数可以保证在协程作用域内的所有代码和子协程没有全部执行完之前一直阻塞当前线程。
+                coroutineTest.main123();
             }
         });
 
     }
+
+
 
 
     // 手动在子线程中创建 Looper
