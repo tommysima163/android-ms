@@ -8,6 +8,8 @@ material = "1.10.0"
 retrofit = "2.11.0"
 
 kotlin_version = "1.5.31"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -18,6 +20,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 kotlin = { group = "org.jetbrains.kotlin",  name = "kotlin-gradle-plugin",version.ref = "kotlin_version" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 #implementation 'com.squareup.retrofit2:retrofit:2.11.0'
 

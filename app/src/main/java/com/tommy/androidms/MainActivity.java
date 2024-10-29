@@ -1,6 +1,7 @@
 package com.tommy.androidms;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,6 +26,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LifecycleOwner;
 
+
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.google.gson.JsonParser;
 import com.tommy.androidms.broadcast.MyReceiver;
 import com.tommy.androidms.broadcast.MyReceiver2;
@@ -43,6 +46,8 @@ import com.tommy.androidms.service.ServiceTwo;
 import com.tommy.nativecpp.JNITool;
 
 import org.json.JSONObject;
+
+import java.util.List;
 
 import me.jessyan.autosize.internal.CancelAdapt;
 import me.jessyan.autosize.internal.CustomAdapt;
@@ -113,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements CustomAdapt {
         // ViewBinding ,  MainActivityBinding  与 对应的xml  main_activity 对应
         binding = MainActivityBinding.inflate(LayoutInflater.from(this));
         setContentView(binding.getRoot());
+
 
         // startService
         binding.startService1Btn.setOnClickListener(new View.OnClickListener() {
@@ -322,9 +328,42 @@ public class MainActivity extends AppCompatActivity implements CustomAdapt {
             }
         });
 
+        binding.processBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runningProcesses();
+            }
+        });
+
+        binding.routerABtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG,"routerABtn----123");
+                ARouter.getInstance().build("/liba/main").navigation();
+
+            }
+        });
+
+
+
     }
 
 
+
+
+    void runningProcesses(){
+        // 获取系统的ActivityManager
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+
+        // 获取当前正在运行的进程
+        List<ActivityManager.RunningAppProcessInfo> runningProcesses = activityManager.getRunningAppProcesses();
+
+        // 遍历进程并打印信息
+        for (ActivityManager.RunningAppProcessInfo processInfo : runningProcesses) {
+            Log.e("RunningProcess", "Process Name: " + processInfo.processName);
+        }
+
+    }
 
 
     // 手动在子线程中创建 Looper

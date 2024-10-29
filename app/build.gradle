@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 
@@ -8,7 +9,17 @@ android {
     namespace 'com.tommy.androidms'
     compileSdk 35
 
+
+
     defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // ARouter参数
+                arguments = [mylibraryA: project.getName()]
+            }
+        }
+
+
         applicationId "com.tommy.androidms"
         minSdk 26
         targetSdk 34
@@ -17,6 +28,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+
 
     buildTypes {
         release {
@@ -46,8 +59,19 @@ android {
 
 
 dependencies {
-    //test
 
+    //ARouter
+    implementation 'com.alibaba:arouter-api:1.5.2'
+
+//    implementation ('com.alibaba:arouter-api:1.5.2') {
+//        exclude group: 'com.android.support', module: 'support-compat'
+//    }
+    // 项目中如果使用了kotlin，则需要使用kapt关键字  使用Annotation Processor
+    // java代码使用annotationProcessor关键字即可
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+
+
+    //test
 
     // Room
     implementation ("androidx.room:room-runtime:2.2.6")
@@ -59,7 +83,7 @@ dependencies {
     implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
     implementation "com.github.permissions-dispatcher:permissionsdispatcher:4.8.0"
-    annotationProcessor "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.8.0"
+    kapt "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.8.0"
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation libs.retrofit
     implementation libs.appcompat

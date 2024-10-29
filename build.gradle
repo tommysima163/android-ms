@@ -16,7 +16,7 @@ alias(libs.plugins.androidApplication) apply false
 ext {
     //编译版本不能大于30 否则要Java8以上才能支持，导致jitpack打包失败
     compileSdkVersion = 35
-    targetSdkVersion = 35
+    targetSdkVersion = 34
     minSdkVersion = 26
 
     mvm_version = 'latest.release'
