@@ -15,7 +15,7 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 // ARouter参数
-                arguments = [mylibraryA: project.getName()]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
 
@@ -59,19 +59,17 @@ android {
 
 
 dependencies {
+    implementation project(':moduleA')
+    //这里一定要依赖moduleA  否则ARouter 找不到
+    implementation project(':moduleB')
+
 
     //ARouter
     implementation 'com.alibaba:arouter-api:1.5.2'
-
-//    implementation ('com.alibaba:arouter-api:1.5.2') {
-//        exclude group: 'com.android.support', module: 'support-compat'
-//    }
     // 项目中如果使用了kotlin，则需要使用kapt关键字  使用Annotation Processor
     // java代码使用annotationProcessor关键字即可
     kapt 'com.alibaba:arouter-compiler:1.5.2'
 
-
-    //test
 
     // Room
     implementation ("androidx.room:room-runtime:2.2.6")

@@ -338,12 +338,23 @@ public class MainActivity extends AppCompatActivity implements CustomAdapt {
         binding.routerABtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e(TAG,"routerABtn----123");
-                ARouter.getInstance().build("/liba/main").navigation();
+                Log.e(TAG,"routerABtn----123:"+ARouter.debuggable());
+//                ARouter.getInstance().inject(this);
+                ARouter.getInstance().build("/moduleA/MainActivity").navigation();
 
             }
         });
 
+
+        binding.routerBBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG,"routerB Btn----456:"+ARouter.debuggable());
+//                ARouter.getInstance().inject(this);
+                ARouter.getInstance().build("/moduleB/MainBActivity").navigation();
+
+            }
+        });
 
 
     }

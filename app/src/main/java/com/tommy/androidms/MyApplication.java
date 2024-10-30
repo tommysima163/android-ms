@@ -16,13 +16,14 @@ public class MyApplication extends Application {
         Log.e(TAG,"MyApplication onCreate--1234--");
         AutoSize.initCompatMultiProcess(this);
 //
-        if (BuildConfig.DEBUG) {
+       // if (BuildConfig.DEBUG) {
             // Debug包必须开启调试模式！否则会有各种问题(线上版本需要关闭,否则有安全风险)
             ARouter.openDebug();
             ARouter.openLog();
-        }
+       // }
 //// 尽可能早，推荐在Application中初始化
         ARouter.init(this);
+        Log.e(TAG,"ARouter.init--");
 
     }
 }
